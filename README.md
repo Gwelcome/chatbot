@@ -7,6 +7,7 @@ chatbot은 ChatGPT api를 사용하여 사용자의 질문에 대한 답변을 �
 
 3. Langchain 라이브러리의 RetrievalQA 함수를 사용하여,
     정책 txt 파일의 임베딩 벡터를 기반으로(retriever) 주어진 프롬프트에 대한 답변을 생성하는 qa_chain을 생성합니다. 
+<img width="694" alt="image" src="https://github.com/user-attachments/assets/62d0ae13-3de4-4fdf-936b-f27758bad16e">
 
 # 서버 실행
 ```uvicorn main:app --reload ```
