@@ -9,20 +9,20 @@ chatbot은 ChatGPT api를 사용하여 사용자의 질문에 대한 답변을 �
     정책 txt 파일의 임베딩 벡터를 기반으로(retriever) 주어진 프롬프트에 대한 답변을 생성하는 qa_chain을 생성합니다. 
 <img width="694" alt="image" src="https://github.com/user-attachments/assets/62d0ae13-3de4-4fdf-936b-f27758bad16e">
 
-# 서버 실행
+## 서버 실행
 ```uvicorn main:app --reload ```
 
-# API 엔드포인트
-## /chat : 정책 도메인이 정해지지 않았을 때, 사용자가 질문을 한다면 모든 정책을 기반으로 답변을 생성합니다.
+## API 엔드포인트
+#### /chat : 정책 도메인이 정해지지 않았을 때, 사용자가 질문을 한다면 모든 정책을 기반으로 답변을 생성합니다.
 input = ```{"question": "사용자의 질문 입력"}```
 output =  ```{"answer": "생성된 답변"}```
-## /policychat : 사용자가 특정 정책을 선택한 후(도메인이 결정된 상태), 사용자가 질문을 한다면 프롬프트에 "{policy_name}에 관련된 정책입니다."라는 문장을 추가하여 gpt가 정책을 특정하여 답변을 생성할 수 있도록 합니다. 
+#### /policychat : 사용자가 특정 정책을 선택한 후(도메인이 결정된 상태), 사용자가 질문을 한다면 프롬프트에 "{policy_name}에 관련된 정책입니다."라는 문장을 추가하여 gpt가 정책을 특정하여 답변을 생성할 수 있도록 합니다. 
 input = ```{"policy_name": "정책 이름", "question": "사용자의 질문 입력"}```
 output =  ```{"answer": "생성된 답변"}```
 
-# 데이터 구조
+## 데이터 구조
 
-## data/*.txt : 정책 txt문서들을 load 한 후, embedding 하여 임베딩벡터를 retriever 으로 변환하여 검색기로 사용
+#### data/*.txt : 정책 txt문서들을 load 한 후, embedding 하여 임베딩벡터를 retriever 으로 변환하여 검색기로 사용
 
 ## 의존성
 
